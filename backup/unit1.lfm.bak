@@ -1,0 +1,162 @@
+object Form1: TForm1
+  Left = 268
+  Height = 564
+  Top = 117
+  Width = 650
+  Caption = 'info'
+  ClientHeight = 564
+  ClientWidth = 650
+  LCLVersion = '1.2.6.0'
+  object DBGrid1: TDBGrid
+    Left = 32
+    Height = 192
+    Top = 120
+    Width = 552
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object Nama: TEdit
+    Left = 35
+    Height = 23
+    Top = 528
+    Width = 157
+    TabOrder = 1
+  end
+  object NIS: TEdit
+    Left = 35
+    Height = 23
+    Top = 464
+    Width = 160
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 35
+    Height = 15
+    Top = 440
+    Width = 18
+    Caption = 'NIS'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 32
+    Height = 15
+    Top = 512
+    Width = 64
+    Caption = 'Nama Siswa'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 344
+    Height = 15
+    Top = 440
+    Width = 27
+    Caption = 'Kelas'
+    ParentColor = False
+  end
+  object Kelas: TEdit
+    Left = 336
+    Height = 23
+    Top = 464
+    Width = 160
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Left = 344
+    Height = 15
+    Top = 512
+    Width = 34
+    Caption = 'E-mail'
+    ParentColor = False
+  end
+  object email: TEdit
+    Left = 336
+    Height = 23
+    Top = 528
+    Width = 160
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 35
+    Height = 25
+    Top = 368
+    Width = 123
+    Caption = 'Masukkan Data'
+    OnClick = Button1Click
+    TabOrder = 5
+  end
+  object Button2: TButton
+    Left = 192
+    Height = 25
+    Top = 368
+    Width = 123
+    Caption = 'Edit Data'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object Button3: TButton
+    Left = 356
+    Height = 25
+    Top = 368
+    Width = 123
+    Caption = 'Hapus Data'
+    OnClick = Button3Click
+    TabOrder = 7
+  end
+  object Button4: TButton
+    Left = 504
+    Height = 25
+    Top = 368
+    Width = 123
+    Caption = 'Keluar'
+    OnClick = Button4Click
+    TabOrder = 8
+  end
+  object Label5: TLabel
+    Left = 48
+    Height = 15
+    Top = 80
+    Width = 141
+    Caption = 'Data siswa yang sudah ada'
+    ParentColor = False
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 0
+    Database = 'tugaspd'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'C:\xampp\mysql\lib\libmysql.dll'
+    left = 592
+    top = 232
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from siswasiswi'
+    )
+    Params = <>
+    left = 592
+    top = 152
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection1
+    Params = <>
+    left = 592
+    top = 88
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    left = 592
+    top = 24
+  end
+end
